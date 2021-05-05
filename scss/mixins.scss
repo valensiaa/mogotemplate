@@ -1,0 +1,82 @@
+// Flexbox display
+@mixin flexbox {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   font-size: 0;
+}
+
+// Inline flex display
+@mixin inline-flex {
+   display: -webkit-inline-box;
+   display: -moz-inline-box;
+   display: -webkit-inline-flex;
+   display: -ms-inline-flexbox;
+   display: inline-flex;
+}
+// Flex Flow Direction
+// - applies to: flex containers
+// row (default) | row-reverse | column | column-reverse
+@mixin flex-direction($direction: row) {
+   @if $direction == row-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: horizontal;
+      -moz-box-direction: reverse;
+      -moz-box-orient: horizontal;
+   } @else if $direction == column {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-box-direction: normal;
+      -moz-box-orient: vertical;
+   } @else if $direction == column-reverse {
+      -webkit-box-direction: reverse;
+      -webkit-box-orient: vertical;
+      -moz-box-direction: reverse;
+      -moz-box-orient: vertical;
+   } @else {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -moz-box-direction: normal;
+      -moz-box-orient: horizontal;
+   }
+   -webkit-flex-direction: $direction;
+   -ms-flex-direction: $direction;
+   flex-direction: $direction;
+}
+// Browser Prefixes
+@mixin transform($transforms) {
+   -webkit-transform: $transforms;
+   -moz-transform: $transforms;
+   -ms-transform: $transforms;
+   transform: $transforms;
+}
+
+// Rotate
+@mixin rotate($deg) {
+   @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin($origin) {
+   -webkit-transform-origin: $origin;
+   -moz-transform-origin: $origin;
+   -ms-transform-origin: $origin;
+   transform-origin: $origin;
+}

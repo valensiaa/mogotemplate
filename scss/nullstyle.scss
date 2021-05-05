@@ -37,11 +37,12 @@ body {
    -ms-text-size-adjust: 100%;
    -moz-text-size-adjust: 100%;
    -webkit-text-size-adjust: 100%;
+   font-family: $fontfamily;
 }
 input,
 button,
 textarea {
-   font-family: inherit;
+   font-family: $fontfamily;
 }
 
 input::-ms-clear {
@@ -78,8 +79,3 @@ h6 {
    font-weight: 400;
 }
 /*--------------------*/
-
-.bigred {
-   font-size: 20px;
-   color: red;
-}
