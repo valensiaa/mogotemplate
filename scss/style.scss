@@ -5,7 +5,6 @@ $fontfamily: "Roboto";
 
 body.lock {
     overflow: hidden;
-
 }
 
 .wrapper {
@@ -55,7 +54,8 @@ body.lock {
 //background 100%
 .item-main-screen__bg,
 .clients__img,
-.undesign__img {
+.undesign__img,
+.map__img {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -349,7 +349,9 @@ body.lock {
 .ourteam,
 .brands,
 .ourwork,
-.clients {
+.clients,
+.blog,
+.map {
     margin: 90px 0px 0px 0px;
 }
 
@@ -584,7 +586,8 @@ body.lock {
 .undesign__block,
 .clients__block,
 .undesign__content,
-.clients__content {
+.clients__content,
+.map__content {
     position: relative;
     z-index: 2;
 }
@@ -922,6 +925,166 @@ body.lock {
     }
 }
 
-.footer {
-    &__row {}
+.blog {
+
+    &__block {}
+
+    &__row {
+        @include flexbox();
+        @include flex-direction($direction: row);
+        margin: 0 -15px;
+
+    }
+
+    &__item {
+        flex: 0 1 33.333%;
+        padding: 0 15px;
+    }
+
+    &__column {
+        @include flexbox();
+        @include flex-direction($direction: column);
+        align-items: start;
+        justify-content: space-between;
+
+        & h3 {
+            font-family: Montserrat;
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #333333;
+            padding: 20px 0px;
+        }
+    }
+
+    &__thumb {
+        position: relative;
+    }
+
+    &__date {
+        @include inline-flex();
+        @include flex-direction($direction: column);
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: -10px;
+        bottom: 10px;
+        width: 60px;
+        height: 70px;
+        background-color: #95e1d3;
+        color: #ffffff;
+
+        & span {
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            font-style: italic;
+            text-transform: none;
+        }
+
+        & b {
+            font-family: Montserrat;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+    }
+
+    &__desc {
+        font-family: Roboto;
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #999999;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #e5e5e5;
+            margin: 20px 0px;
+        }
+    }
+
+    &__icons {
+        @include flexbox();
+        @include flex-direction($direction: row);
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 0 20px 0;
+
+        & div {
+            font-family: Roboto;
+            font-size: 15px;
+            line-height: 24px;
+            font-weight: 300;
+            font-style: italic;
+            color: #999999;
+        }
+
+    }
 }
+
+.icon {
+    &__watch {
+        margin: 0 20px 0 0;
+
+        &::before {
+            content: url('../img/icons/watch.png');
+        }
+    }
+
+    &__comment {
+
+        &::before {
+            content: url('../img/icons/comment.png');
+        }
+    }
+}
+
+.map {
+    position: relative;
+
+    &__img {}
+
+    &__bg {
+        background-color: rgba(255, 255, 255, 0.85);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        position: relative;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #f38181;
+    
+        &::before {
+            margin: 55px auto 20px;
+            display: block;
+            content: url('../img/icons/PIN_2.png');
+        }
+
+        &::after {
+            margin: 20px auto 55px;
+            content: '';
+            width: 60px;
+            height: 3px;
+            display: block;
+            background-color: #f38181;
+        }
+    }
+}
+
+
+
+    .footer {
+        &__row {}
+    }
