@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "meow": "^3.7.0",
-    "node-sass": "^5.0.0",
-    "npm": "^7.11.2",
+    "json-schema": ">=0.4.0",
+    "meow": "^10.1.2",
+    "node-sass": "^6.0.1",
+    "npm": "^8.1.4",
+    "path-parse": ">=1.0.7",
     "trim-newlines": ">=3.0.1",
-    "via": "0.0.1",
-    "path-parse": ">=1.0.7"
+    "via": "0.0.1"
   },
   "devDependencies": {
     "tar": ">=6.1.9"
