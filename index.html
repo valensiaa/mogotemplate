@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+   <div class="wrapper">
         <main class="page">
             <header class="header">
                 <div class="container">
@@ -56,17 +56,27 @@
                 <div class="main-screen__footer pagin-bg">
                     <div class="container">
                         <div class="pagin-bg__block">
+                            
                             <div class="pagin-bg__element">
-                                <b>01</b> intro
+                               <a href="#intro">
+                                    <b>01</b> intro  
+                                </a>
+                            </div>
+
+                            <div class="pagin-bg__element">
+                                <a href="#work">
+                                    <b>02</b> work
+                                </a>
                             </div>
                             <div class="pagin-bg__element">
-                                <b>02</b> work
+                                <a href="#about">
+                                    <b>03</b> about
+                                </a>
                             </div>
                             <div class="pagin-bg__element">
-                                <b>03</b> about
-                            </div>
-                            <div class="pagin-bg__element">
-                                <b>04</b> contacts
+                                <a href="#contacts">
+                                    <b>04</b> contacts
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -74,6 +84,7 @@
             </div>
             <div class="content">
                 <section class="about">
+                    <a name = "intro"></a>
                     <div class="container">
                         <div class="about__block block">
                             <div class="block__subtitle">What we do</div>
@@ -137,6 +148,7 @@
                     </div>
                 </section>
                 <section class="workwith">
+                    <a name = "work"></a>
                     <div class="container">
                         <div class="workwith__block block">
                             <div class="block__subtitle">We work with</div>
@@ -222,6 +234,7 @@
                     </div>
                 </section>
                 <section class="whatwedo">
+                    <a name = "about"></a>
                     <div class="container">
                         <div class="whatwedo__block block">
                             <div class="block__subtitle">Service</div>
@@ -326,6 +339,24 @@
                                 <div class="reviews__autor">Jon Doe</div>
                             </div>
                         </div>
+                        <div class="reviews__row ">
+                            <div class="reviews__icon">
+                                <img src="img/icons/SPEECH_4.jpg" alt="">
+                            </div>
+                            <div class="reviews__item">
+                                <div class="reviews__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                    veniam, quis nostrud exercitation.”</div>
+                                <div class="reviews__autor">Marta Doe</div>
+                            </div>
+                        </div>
+                          <!-- Next/prev buttons -->
+                        <a class="reviews__prev" onclick="plusSlides(-1, 0)">
+                            <img src="img/icons/arrow___left.png" alt="">
+                        </a>
+                        <a class="reviews__next" onclick="plusSlides(1, 0)">
+                            <img src="img/icons/arrow___right.png" alt="">
+                        </a>
                     </div>
                 </section>
                 <section class="ourteam">
@@ -401,6 +432,11 @@
                     </div>
                     <div class="ourwork__portfolio">
                         <div class="ourwork__row">
+                            <div class="ourwork__cover-bg">
+                                <img src="img/icons/PICTURE.png" alt="">
+                                <span>creatively designed</span>
+                                <i>Lorem ipsum dolor sit</i>
+                            </div>
                             <div class="ourwork__column">
                                 <img src="img/pic/Layer_26.jpg" alt="">
                                 <img src="img/pic/Layer_35.jpg" alt="">
@@ -419,8 +455,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="reviews">
-                    <div class="container">
+                <section class="reviews testimonials">
                         <div class="reviews__row">
                             <div class="reviews__icon">
                                 <img src="img/testimonials/Layer_36.jpg" alt="">
@@ -432,7 +467,24 @@
                                 <div class="reviews__autor">Joshua Earle</div>
                             </div>
                         </div>
+                    <div class="reviews__row">
+                            <div class="reviews__icon">
+                                <img src="img/testimonials/Layer_36.jpg" alt="">
+                            </div>
+                            <div class="reviews__item">
+                                <div class="reviews__desc">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                    veniam, quis nostrud exercitation.”</div>
+                                <div class="reviews__autor">Jon Doe</div>
+                            </div>
                     </div>
+                    <!-- Next/prev buttons -->
+                        <a class="reviews__prev" onclick="plusSlides(-1, 1)">
+                            <img src="img/icons/arrow___left.png" alt="">
+                        </a>
+                        <a class="reviews__next" onclick="plusSlides(1, 1)">
+                            <img src="img/icons/arrow___right.png" alt="">
+                        </a>
                 </section>
                 <section class="clients">
                     <div class="clients__img ibg">
@@ -568,6 +620,7 @@
                     </div>
                 </section>
                 <section class="map">
+                    <a name = "contacts"></a>
                     <div class="map__img ibg">
                         <img src="img/map-bg.jpg" alt="">
                         <div class="map__bg"></div>
@@ -676,8 +729,8 @@
                 </div>
             </footer>
         </main>
-    </div>
-    <script src="js/script.js"></script>
+   </div>
+<script src="js/script.js"></script>
 </body>
 
 </html>

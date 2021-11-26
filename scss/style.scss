@@ -83,7 +83,7 @@ body.lock {
     &__title {
         color: #ffffff;
         font-family: "Kaushan Script";
-        font-size: 72px;
+            font-size: 6vw;
         font-weight: 400;
         font-style: normal;
         letter-spacing: normal;
@@ -94,7 +94,7 @@ body.lock {
     &__text {
         color: #ffffff;
         font-family: "Montserrat";
-        font-size: 150px;
+        font-size: 12vw;
         font-weight: 700;
         max-width: 800px;
         font-style: normal;
@@ -315,16 +315,22 @@ body.lock {
 
     &__element {
         opacity: 0.7;
-        color: #ffffff;
+
+        width: calc(100% / 4 - 30px);
+        & a {
+                    color: #ffffff;
         font-family: Montserrat;
-        font-size: 18px;
+        font-size: 2vw;
         font-weight: 400;
         text-align: left;
         text-transform: uppercase;
-        width: calc(100% / 4 - 30px);
+        }
+        &:hover {
+            opacity: 1;
+        }
 
         b {
-            font-size: 24px;
+            font-size: 2vw;
             font-weight: 700;
         }
 
@@ -352,7 +358,7 @@ body.lock {
 .clients,
 .blog,
 .map {
-    margin: 90px 0px 0px 0px;
+    margin: 10vh 0px 0px 0px;
 }
 
 .block {
@@ -361,7 +367,7 @@ body.lock {
     &__subtitle {
         color: #333333;
         font-family: "Kaushan Script";
-        font-size: 24px;
+        font-size: 2vw;
         font-weight: 400;
         padding: 0px 0px 20px 0px;
     }
@@ -369,7 +375,7 @@ body.lock {
     &__title {
         color: #333333;
         font-family: Montserrat;
-        font-size: 30px;
+        font-size: 2.5vw;
         font-weight: 700;
         text-transform: uppercase;
 
@@ -378,7 +384,7 @@ body.lock {
             width: 60px;
             height: 3px;
             background-color: #f38181;
-            margin: 40px auto 47px;
+            margin: 7vh auto 8vh;
             display: block;
         }
     }
@@ -386,7 +392,7 @@ body.lock {
     &__text {
         color: #999999;
         font-family: Roboto;
-        font-size: 15px;
+        font-size: 1.3vw;
         font-weight: 400;
         font-style: normal;
         letter-spacing: normal;
@@ -405,6 +411,7 @@ body.lock {
     &__item {
         flex: 0 1 33.333%;
         padding: 0px 15px;
+        position: relative;
     }
 
     img {
@@ -419,8 +426,7 @@ body.lock {
 
 .item__bg {
     display: none;
-    @include transform(translate(0px, 0px));
-    @include flexbox();
+    @include transform(translate(0px, 0px));   
     @include flex-direction($direction: column);
     align-items: center;
     justify-content: center;
@@ -432,7 +438,7 @@ body.lock {
     & span {
         display: none;
         font-family: Montserrat;
-        font-size: 18px;
+        font-size: 1.6vw;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
@@ -458,6 +464,7 @@ body.lock {
         top: 0;
         left: 0;
         height: 100%;
+        pointer-events: none;
         background-color: #95e1d3;
     }
 
@@ -467,8 +474,9 @@ body.lock {
     }
 
     & .item__bg {
+        pointer-events: auto;
         transition: all 0.3s ease-in-out;
-        display: flex;
+        @include flexbox();
         position: absolute;
         width: calc(100% - 30px);
         margin: 0 15px;
@@ -502,7 +510,7 @@ body.lock {
         flex: 0 1 20%;
         height: auto;
         border-left: 1px solid #ffffff3d;
-        padding: 90px 0px;
+        padding: 10vh 0px;
 
         &:last-child {
             height: auto;
@@ -511,7 +519,7 @@ body.lock {
 
         & b {
             font-family: Montserrat;
-            font-size: 72px;
+            font-size: 6vw;
             line-height: 1.2;
             font-weight: 700;
             text-transform: uppercase;
@@ -520,7 +528,7 @@ body.lock {
 
         & span {
             font-family: Montserrat;
-            font-size: 14px;
+            font-size: 1.2vw;
             line-height: 1.2;
             font-weight: 400;
             text-transform: uppercase;
@@ -541,7 +549,7 @@ body.lock {
 
 .service {
     & hr {
-        margin: 50px 0px;
+        margin: 4vh 0px;
         height: 1px;
         width: 100%;
         background-color: #e5e5e5;
@@ -553,7 +561,7 @@ body.lock {
     }
 
     &__icon {
-        padding: 0px 30px;
+        padding: 0px 2.5vw;
     }
 
     &__textblock {
@@ -563,7 +571,7 @@ body.lock {
 
     &__title {
         font-family: Montserrat;
-        font-size: 14px;
+        font-size: 1.1vw;
         line-height: 1.2;
         font-weight: 400;
         text-transform: uppercase;
@@ -573,7 +581,7 @@ body.lock {
 
     &__desc {
         font-family: Roboto;
-        font-size: 15px;
+        font-size: 1.2vw;
         line-height: 24px;
         font-weight: 400;
         color: #999999;
@@ -602,14 +610,15 @@ body.lock {
     &__content {
         & img:first-child {
             position: relative;
-            margin: 0 0 -130px 0px;
             left: 30%;
+            max-width: 40%;
         }
 
         & img:last-child {
             position: relative;
-            bottom: -195px;
             left: 21%;
+            max-width: 28%;
+            vertical-align: bottom;
         }
     }
 
@@ -735,30 +744,36 @@ body.lock {
     width: 100%;
     padding: 70px 0;
 }
-
+.brands {
+    & img {
+        width: 100%;
+    }
+}
 .reviews {
+    & .container {
+        position: relative;
+    }
+    &__prev, &__next {
+            cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  padding: 16px;
+  user-select: none;
+        }
+
+    &__next {
+  right: 0;
+        }
+    &__prev {
+  left: 0;
+        }
+
     &__row {
-        @include flexbox();
+        display: none;
+        //@include flexbox();
         @include flex-direction($direction: row);
-        align-items: center;
-
-        &::before {
-            background-image: url(../img/icons/arrow___left.png);
-        }
-
-        &::after {
-            background-image: url(../img/icons/arrow___right.png);
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            display: block;
-            width: 12px;
-            height: 22px;
-            padding: 20px;
-            background-repeat: no-repeat;
-        }
+        align-items: center;      
     }
 
     &__icon {
@@ -767,7 +782,7 @@ body.lock {
 
     &__desc {
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 2vw;
         line-height: 36px;
         font-weight: 300;
         font-style: italic;
@@ -777,7 +792,7 @@ body.lock {
 
     &__autor {
         font-family: "Kaushan Script";
-        font-size: 24px;
+        font-size: 2.1vw;
         line-height: 1.2;
         font-weight: 400;
         color: #333333;
@@ -792,6 +807,19 @@ body.lock {
             background-color: #f38181;
         }
     }
+}
+.testimonials {
+   padding: 0 15%;
+   position: relative;
+   & .reviews__row {
+    display: none;
+   }
+       & .reviews__next {
+  right: 10%;
+        }
+    & .reviews__prev {
+  left: 10%;
+        }
 }
 
 .ourteam {
@@ -826,6 +854,39 @@ body.lock {
 }
 
 .ourwork {
+    position: relative;
+    &__cover-bg {
+        visibility: hidden;
+        @include inline-flex();
+        @include flex-direction($direction: column);
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(0deg
+, rgba(252, 227, 138, 0.89) 0%, rgba(243, 129, 129, 0.89) 100%);
+        & img {
+            width: 30px !important;
+            height: 30px;
+        }
+        & span {
+            padding: 20px 0px;
+font-family: Montserrat;
+font-size: 14px;
+font-weight: 400;
+text-transform: uppercase;
+color: #ffffff;
+        }
+        & i {
+font-family: Roboto;
+font-size: 15px;
+font-weight: 300;
+color: #ffffff;
+        }
+    }
     &__portfolio {
         padding: 100px 0 0 0;
     }
@@ -863,7 +924,7 @@ body.lock {
     }
 
     &__content {
-        padding: 85px 50px;
+        padding: 10vh 7vw;
     }
 
     &__row {
@@ -914,7 +975,7 @@ body.lock {
 
     &__desc {
         font-family: Roboto;
-        font-size: 15px;
+        font-size: 1.2vw;
         line-height: 24px;
         font-weight: 400;
         color: #999999;
@@ -922,8 +983,6 @@ body.lock {
 }
 
 .blog {
-    &__block {
-    }
 
     &__row {
         @include flexbox();
@@ -932,9 +991,10 @@ body.lock {
     }
 
     &__item {
-        flex: 0 1 33.333%;
+        flex: 1 0 33.333%;
         padding: 0 15px;
     }
+
 
     &__column {
         @include flexbox();
@@ -955,6 +1015,9 @@ body.lock {
 
     &__thumb {
         position: relative;
+        & img {
+            max-width: 100%;
+        }
     }
 
     &__date {
@@ -1267,6 +1330,8 @@ body.lock {
         & img {
             flex: 0 1 33.333%;
             padding: 1px;
+            max-width: 33%;
+            height: fit-content;
         }
     }
     & a {

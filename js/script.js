@@ -22,38 +22,77 @@ if (iconMenu) {
 
 // hover effect images
 const hoverAboutImg = document.querySelector('.block__gallery');
-const outItemBg = document.querySelector('.item__bg');
 
 hoverAboutImg.addEventListener('mouseover', function(e) {
-    if (e.target.tagName == "IMG") {
+    if (e.target.tagName === "IMG") {
         e.target.parentElement.classList.add('active');
     } else return;
 })
 hoverAboutImg.addEventListener('mouseout', function(e) {
-    e.target.classList.remove('active');
+    if (e.target.classList.contains('active')) {
+        e.target.classList.remove('active');
+    }
+    
 })
+
+ //append div to img hover 
+ // const hoverImg = document.querySelector('.ourwork__column');
+ // hoverImg.addEventListener('mouseover', function(e) {
+ //     if (e.target.tagName == "IMG") {
+ //        e.target.classList.add('hover');
+ //    } else return;
+ // })
+
 
 //tabs open
-let clickArrow;
 const tabArrow = document.querySelector('.whatwedo__tabs');
-const tabDesc = document.querySelector('.tab__desc-wrap');
+const tabDesc = document.querySelectorAll('.tab__desc-wrap');
 
-window.addEventListener('load', function() {
-    tabDesc.classList.add('open');
-})
+ window.addEventListener('load', function() {
+     tabDesc[0].classList.add('open');
+ })
 
 tabArrow.addEventListener('click', function(e) {
-    tabDesc.classList.remove('open');
-    let target = e.target;
-    if (target.className != 'tab__arrow') return;
-    open(target);
-
+    var curElem = e.target;    
+    if (curElem.classList.contains('tab__arrow')) {
+        
+        if(curElem.parentElement.nextElementSibling.classList.contains('open')) {
+            curElem.parentElement.nextElementSibling.classList.remove('open');
+            //toggleArrow(curElem);
+            for (var i=0; i < tabDesc.length; i++) {
+                if (tabDesc[i] === curElem.parentElement.nextElementSibling) {      
+                     if(i === tabDesc.length-1) { 
+                         tabDesc[0].classList.add('open');
+                     } else { tabDesc[i+1].classList.add('open'); }
+                }
+            }          
+        } else {
+            for (var i=0; i < tabDesc.length; i++) {
+               if (tabDesc[i].classList.contains('open')) {
+                 tabDesc[i].classList.remove('open'); 
+            }
+        }
+            curElem.parentElement.nextElementSibling.classList.add('open');
+        }
+    } else return;
 })
 
-function open(e) {
-    if (clickArrow) {
-        clickArrow.parentElement.nextElementSibling.classList.remove('open');
-    }
-    clickArrow = e;
-    clickArrow.parentElement.nextElementSibling.classList.add('open');
+//sliders
+var slideIndex = [1, 1];
+var sliderClass = ['.grey-row .reviews__row', '.testimonials .reviews__row']
+showSlides(1, 0);
+showSlides(1, 1);
+
+function plusSlides(n, index) {  
+  showSlides(slideIndex[index] += n, index);
+}
+function showSlides(n, index) {
+  var i; 
+  var slides = document.querySelectorAll(sliderClass[index]);
+  if (n > slides.length) {slideIndex[index] = 1}
+    if (n < 1) {slideIndex[index] = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    } 
+    slides[slideIndex[index]-1].style.display = "flex";
 }

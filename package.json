@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "meow": "^3.7.0",
     "node-sass": "^5.0.0",
-    "npm": "^7.11.2"
+    "npm": "^7.11.2",
+    "trim-newlines": ">=3.0.1",
+    "via": "0.0.1",
+    "path-parse": ">=1.0.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tar": ">=6.1.9"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss --o css"
+    "scss": "node-sass --watch scss --o css",
+    "node-sass": "node-sass --output-style compressed -o dist/css src/scss"
   },
   "author": "",
   "license": "ISC"
